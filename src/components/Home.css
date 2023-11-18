@@ -1,0 +1,37 @@
+.parent-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.picture-text-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.picture {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.text-div {
+  width: 20%;
+  margin-left: 5%;
+  border-left: 2px solid black;
+  padding-left: 1.5%;
+  line-height: 1.5;font-family: 'Courier New', Courier, monospace;
+}
+
+.react {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.python {
+    font-size: 1.5em;
+    font-weight: 600;
+
+}
