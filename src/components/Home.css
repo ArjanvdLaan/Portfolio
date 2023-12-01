@@ -1,37 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .parent-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
+  /* margin-bottom: 6%;  */
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 10%;
+  /* border: 2px solid black; */
+  /* width: fit-content; */
 }
 
 .picture-text-div {
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 5%;
+  justify-content: center;
+  height: 300px;
+  overflow: auto;
+  width: 60%;
+
+  /* align-content: space-between; */
+  /* margin-top: 5%; */
+  /* border: 2px solid black; */
 }
 
 .picture {
-  width: 20%;
+  width: 40vh;
+  align-items: center;
+  max-width: 300px;
+  height: auto;
   border-radius: 50%;
 }
 
 .text-div {
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  white-space: nowrap;
+  /* height: 100%; */
+  /* width: 23%; */
+
   margin-left: 5%;
   border-left: 2px solid black;
   padding-left: 1.5%;
-  line-height: 1.5;font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
+  font-family: "Courier New", Courier, monospace;
+  /* border: 2px solid black; */
+}
+
+.name {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  /* flex-wrap: nowrap; */
+  /* border: 2px solid black; */
+  /* width: fit-content; */
+}
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+.loader__dot {
+  animation: 1s blink infinite;
+}
+.loader__dot:nth-child(2) {
+  animation-delay: 250ms;
+}
+.loader__dot:nth-child(3) {
+  animation-delay: 500ms;
+}
+
+.dynamic-content {
+  height: 150px;
+  overflow: auto;
+  align-items: stretch;
+}
+
+.tagline {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0.5em 0;
+}
+
+.sub-text {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  /* border: 2px solid black; */
+  justify-content: space-between;
+  width: 90%;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px solid black; */
+  width: 20%;
+  padding: 10%;
+}
+.icon {
+  height: 2em;
+  width: 2em;
+  margin-right: 20px;
 }
 
 .react {
-    font-size: 1.5em;
-    font-weight: 600;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .python {
-    font-size: 1.5em;
-    font-weight: 600;
+  font-size: 1.5em;
+  font-weight: 600;
+}
 
+.codecademy-icon {
+  height: 2.2em;
+  width: 2.2em;
+}
+
+.arrow {
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* border: 2px solid black; */
+  height: 2em;
+  width: 2em;
+}
+
+.arrow:hover {
+  color: #333;
+  transform: scale(1.5);
 }
