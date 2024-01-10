@@ -21,14 +21,14 @@ function MainContent() {
     case "/":
       page = "home";
       break;
-    case "/page1":
-      page = "page1";
+    case "/project1":
+      page = "Project 1";
       break;
-    case "/page2":
-      page = "page2";
+    case "/project2":
+      page = "Project 2";
       break;
-    case "/page3":
-      page = "page3";
+    case "/project3":
+      page = "Project 3";
       break;
     default:
       page = "";
@@ -39,16 +39,16 @@ function MainContent() {
       <div className={`content ${isHovered ? "blurred" : ""}`}>
         <Dropdown
           className="dropdown"
-          items={["Home", "Page1", "Page2", "Page3"]}
+          items={["Home", "Project 1", "Project 2", "Project 3"]}
           setIsHovered={setIsHovered}
           page={page}
         />
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/page1" element={<Page1 />} />
-          <Route path="/page2" element={<Page2 />} />
-          <Route path="/page3/*" element={<StudentDashboard />} />
+          <Route path="/project1" element={<Page1 />} />
+          <Route path="/project2" element={<Page2 />} />
+          <Route path="/project3/*" element={<StudentDashboard />} />
         </Routes>
       </div>
     </div>

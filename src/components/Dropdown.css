@@ -29,20 +29,20 @@
   background: transparent;
 }
 
-.hamburger-icon:not(.page1):not(.page2) {
-  margin-left: 5px;
-}
-
 .hamburger-icon.home {
   color: black;
 }
 
-.hamburger-icon.page1 {
+.hamburger-icon.project1 {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.hamburger-icon.page2 {
+.hamburger-icon.project2 {
   color: white;
+}
+
+.hamburger-icon.project3 {
+  margin-left: 5px;
 }
 
 .dropdown:hover :not(.hamburger-icon) {
@@ -59,28 +59,29 @@
   transition: transform 0.5s ease-in-out;
   width: 20vw;
   box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.5);
-  background-color: white;
+  /* background-color: white; */
+  /* color: white; */
 }
 
-.dropdown:hover .dropdown-menu.page1 {
+.dropdown:hover .dropdown-menu.project1 {
   background-color: rgba(255, 255, 255, 0.3);
   font-weight: 800;
   color: black;
   margin: 2% 1% 1% 1%;
 }
 
-.dropdown:hover .dropdown-menu.page2 {
+.dropdown:hover .dropdown-menu.project2 {
   background-color: #2f556b;
 }
 
-.dropdown:hover .dropdown-menu.page3 {
+.dropdown:hover .dropdown-menu.project3 {
   background-color: white;
 }
 
 /* dropdown-item */
 
 .dropdown-item,
-.dropdown-item.page3 {
+.dropdown-item.project3 {
   position: relative;
   display: flex;
   justify-content: center;
@@ -111,20 +112,20 @@
   background-color: white;
 }
 
-.dropdown:hover .dropdown-item.page1:hover {
+.dropdown:hover .dropdown-item.project1:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.dropdown .dropdown-item.page2 {
+.dropdown .dropdown-item.project2 {
   transition: font-size 0.3s ease;
 }
 
-.dropdown:hover .dropdown-item.page2:hover {
+.dropdown:hover .dropdown-item.project2:hover {
   background-color: #2f556b;
   font-size: 1.8em;
 }
 
-.dropdown:hover .dropdown-item.page1 {
+.dropdown:hover .dropdown-item.project1 {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 600;
 }
@@ -142,23 +143,23 @@
   color: white;
 }
 
-.dropdown:hover .dropdown-item.page2 {
+.dropdown:hover .dropdown-item.project2 {
   color: white;
   font-family: "Roboto", sans-serif;
 }
 
-.dropdown-item.page2:hover,
-.dropdown-item.page3:hover {
+/* .dropdown-item.project2:hover,
+.dropdown-item.project3:hover {
   background-color: #2f556b;
   font-family: "Roboto", sans-serif;
   width: 100%;
-}
+} */
 
-.dropdown:hover .dropdown-item.page3 {
+.dropdown:hover .dropdown-item.project3 {
   color: black;
 }
 
-.dropdown:hover .dropdown-item.page3:hover {
+.dropdown:hover .dropdown-item.project3:hover {
   color: white;
 }
 
@@ -185,8 +186,8 @@
   border-right-width: 2px;
 }
 
-.dropdown-item.page1:hover::before,
-.dropdown-item.page1:hover::after {
+.dropdown-item.project1:hover::before,
+.dropdown-item.project1:hover::after {
   background-color: rgba(255, 255, 255, 0.1);
   width: 100%;
   height: 100%;

@@ -10,6 +10,9 @@ function Dropdown({ items, setIsHovered, page }) {
     setIsHovered(false);
   };
 
+  // Convert page to a valid CSS class name
+  let className = page.toLowerCase().replace(/\s+/g, '');
+
   return (
     <div className="dropdown-container">
       <div
@@ -23,15 +26,19 @@ function Dropdown({ items, setIsHovered, page }) {
           setIsHovered(false);
         }}
       >
-        <div className={`hamburger-icon ${page}`}>☰</div>
+        <div className={`hamburger-icon ${className}`}>☰</div>
         {isOpen && (
-          <div className={`dropdown-menu ${page}`}>
+          <div className={`dropdown-menu ${className}`}>
             {items.map((item, index) => (
               <Link
                 key={index}
-                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={`dropdown-item ${page}`}
-                onClick={{handleClick}}
+                to={
+                  item === "Home"
+                    ? "/"
+                    : `/${item.replace(/\s+/g, "").toLowerCase()}`
+                }
+                className={`dropdown-item ${className}`}
+                onClick={ handleClick }
               >
                 {item}
               </Link>
