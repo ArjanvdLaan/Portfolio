@@ -56,7 +56,7 @@ const Home = () => {
                 <>
                   <div className="sub-text">
                     <blockquote className="tagline">
-                      Check the pages <br /> in the menu <br /> for some of my{" "}
+                      Check the responsive <br /> pages in the menu <br /> for some of my{" "}
                       <br />
                       projects!
                     </blockquote>

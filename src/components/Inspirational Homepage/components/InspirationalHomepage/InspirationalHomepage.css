@@ -1,0 +1,124 @@
+.parent-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fill-up-space-div {
+  height: 25%;
+}
+
+.goals-and-weather {
+  display: flex;
+  width: 100%;
+  gap: 1em;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-box {
+  width: 100%;
+}
+.goals-box {
+  width: 100%;
+  margin-top: auto;
+}
+
+.quote-box-div {
+  display: flex;
+  height: 30%;
+}
+
+.quote-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .parent-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .goals-and-weather {
+    display: flex;
+    width: 95%;
+    gap: 1em;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .weather-box {
+    width: 70%;
+  }
+
+  .quote-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .parent-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 1em;
+  }
+
+  .goals-and-weather {
+    display: flex;
+    /* width: 95%; */
+    gap: 1em;
+    align-items: flex-end;
+  }
+.weather-box {
+    width: 50%;
+  }
+
+  .goals-box {
+    width: 100%;
+  }
+  .quote-box {
+    width: 100%;/
+  }
+}
+
+@media (max-width: 600px) {
+  /* .weather-box {
+    display: none;
+  } */
+
+  .goals-and-weather {
+    justify-content: center;
+    max-width: 90%;
+  }
+  .parent-div {
+    margin: 0;
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+.goals-and-weather {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .goals-box {
+    display: none;
+  }
+  .weather-box {
+    display: flex;
+  }
+}
+
+@media (max-width: 768) and (orientation: landscape) {
+  .parent-div {
+    justify-content: space-between;
+  }
+}

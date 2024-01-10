@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Dropdown.css";
 
-function Dropdown({ items, setIsHovered }) {
+function Dropdown({ items, setIsHovered, page }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -23,14 +23,14 @@ function Dropdown({ items, setIsHovered }) {
           setIsHovered(false);
         }}
       >
-        <div className="hamburger-icon">☰</div>
+        <div className={`hamburger-icon ${page}`}>☰</div>
         {isOpen && (
-          <div className="dropdown-menu">
+          <div className={`dropdown-menu ${page}`}>
             {items.map((item, index) => (
               <Link
                 key={index}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="dropdown-item"
+                className={`dropdown-item ${page}`}
                 onClick={{handleClick}}
               >
                 {item}

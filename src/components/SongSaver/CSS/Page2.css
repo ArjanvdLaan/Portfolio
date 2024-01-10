@@ -1,0 +1,50 @@
+.songsaver-bg {
+    width: 100%;
+}
+
+header {
+    display: flex;   
+    justify-content: center;
+    background-color: #2F556B
+}
+
+.header {
+    width: 250px;
+    height: 250px;
+    font-size: 40px;
+    color: #6d0e0e;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    margin: 2vh;
+    padding: 5%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    border: 10px solid darkolivegreen;
+    background-color: white
+    
+}
+
+.tbody {
+    background-color: #2F556B;
+}
+
+.song-header {
+    display: flex;
+    width: 80%;
+    justify-content: center;    
+
+}
+.song-row-item {
+    width: 25%;
+    margin-bottom: 5px; 
+    background-color: #2F556B;
+}
+
+th {
+    width: 20%;
+    color: white;
+    font-size: 25px;
+}
