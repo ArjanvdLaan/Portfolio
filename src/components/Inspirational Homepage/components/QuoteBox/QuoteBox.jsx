@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./QuoteBox.css";
 
 export const QuoteBox = () => {
-  const API_URL = "/api/quotes/random?tags=technology,famous-quotes";
+  const API_URL = "https://official-joke-api.appspot.com/random_joke";
 
   const [quote, setQuote] = useState({ content: "", author: "" });
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ export const QuoteBox = () => {
       }
       console.log("response", response);
       const json = await response.json();
-
+      console.log("API response:", json);
       setQuote(json);
       setLoading(false);
     } catch (error) {
@@ -35,8 +35,11 @@ export const QuoteBox = () => {
 
   return (
     <div className="quote-box">
-      <blockquote className="quoteContent">{quote[0].content}</blockquote>
-      <cite title="Source Title">{quote[0].author}</cite>
+      <blockquote className="quoteContent">{quote.setup}</blockquote>
+      <cite title="Source Title">{quote.punchline}</cite>
+      <footer>
+      <p className="attribution"><a href="https://github.com/15Dkatz" target="_blank" rel="noopener noreferrer">&copy;</a></p>
+    </footer>
     </div>
   );
 };

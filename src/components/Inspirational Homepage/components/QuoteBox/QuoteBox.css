@@ -1,58 +1,72 @@
 .quote-box {
-    padding: 20px;
-    border-radius: 10px;
-    /* margin-top: 3.5em; */
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    /* margin-top: 20%; */
+  padding: 20px;
+  border-radius: 10px;
+  /* margin-top: 3.5em; */
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  /* margin-top: 20%; */
 }
 
 .quoteContent {
-    font-size: 1em;
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    font-style: italic;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
 }
 
 cite {
-    display: block;
-    text-align: right;
-    margin-top: 2em;
-    margin-left: 2em;
-    margin-top: 1em;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.7em;
-    font-style: italic;
-    color: white;
+  display: block;
+  text-align: right;
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-top: 1em;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7em;
+  font-style: italic;
+  color: white;
+}
 
+.quote-box footer {
+  margin-top: 1em;
+  text-align: right;
+}
+
+.quote-box .attribution {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.attribution a,
+.attribution a:visited {
+  color: white;
+  text-decoration: none;
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
-    .quote-box {
-        padding: 0;
-    }
-    blockquote {
-        font-size: 0.7em;
-    }
+  .quote-box {
+    padding: 0;
+  }
+  blockquote {
+    font-size: 0.7em;
+  }
 
-    cite {
-        font-size: 0.5em;
-        margin-top: 0;
-    }
+  cite {
+    font-size: 0.5em;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 600px) {
-    .quote-box {
-        padding: 0;
-    }
-    blockquote {
-        font-size: 0.7em;
-    }
+  .quote-box {
+    padding: 0;
+  }
+  blockquote {
+    font-size: 0.7em;
+  }
 
-    cite {
-        font-size: 0.5em;
-        margin-top: 0;
-    }
+  cite {
+    font-size: 0.5em;
+    margin-top: 0;
+  }
 }
-
