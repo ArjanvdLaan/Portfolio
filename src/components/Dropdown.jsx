@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Dropdown.css";
 
-function Dropdown({ items, setIsHovered, page }) {
+function Dropdown({ items, isHovered, setIsHovered, page }) {
+  console.log(page);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -11,24 +12,29 @@ function Dropdown({ items, setIsHovered, page }) {
   };
 
   // Convert page to a valid CSS class name
-  let className = page.toLowerCase().replace(/\s+/g, '');
+  let pageName = page.toLowerCase().replace(/\s+/g, "");
+  console.log(pageName)
 
   return (
     <div className="dropdown-container">
       <div
-        className="dropdown"
-        onMouseEnter={() => {
-          setIsOpen(true);
-          setIsHovered(true);
+        className={`dropdown ${isOpen ? "open" : ""}`}
+        onClick={() => {
+          setIsOpen(!isOpen);
+          if (isOpen) {
+            setIsHovered(false);
+          } else {
+            setIsHovered(true);
+          }
         }}
-        onMouseLeave={() => {
-          setIsOpen(false);
-          setIsHovered(false);
-        }}
+        onMouseLeave={() => setIsOpen(false)}
       >
-        <div className={`hamburger-icon ${className}`}>☰</div>
+        <div className={`hamburger-icon ${pageName}`}>☰</div>
         {isOpen && (
-          <div className={`dropdown-menu ${className}`}>
+          <div
+            className={`dropdown-menu ${pageName} ${isOpen ? "open" : ""}`}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {items.map((item, index) => (
               <Link
                 key={index}
@@ -37,8 +43,8 @@ function Dropdown({ items, setIsHovered, page }) {
                     ? "/"
                     : `/${item.replace(/\s+/g, "").toLowerCase()}`
                 }
-                className={`dropdown-item ${className}`}
-                onClick={ handleClick }
+                className={`dropdown-item ${pageName} ${isOpen ? "open" : ""}`}
+                onClick={handleClick}
               >
                 {item}
               </Link>

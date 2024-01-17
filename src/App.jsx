@@ -40,6 +40,7 @@ function MainContent() {
         <Dropdown
           className="dropdown"
           items={["Home", "Project 1", "Project 2", "Project 3"]}
+          isHovered={isHovered}
           setIsHovered={setIsHovered}
           page={page}
         />

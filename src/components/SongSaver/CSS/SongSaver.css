@@ -1,96 +1,93 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .songsaver {
-    display: flex;
-    align-items: center;
-    background-color: darkolivegreen;
-    justify-content: center; 
+  display: flex;
+  align-items: center;
+  background-color: darkolivegreen;
+  justify-content: center;
 }
 
 .newSong {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .input {
-    width: 16%;
-    margin: 10px;
+  width: 16%;
+  margin: 10px;
 }
 
 .input-width {
-    width: 100%;
-    height: 30px;
-    background-color: white;
-    border-radius: 10px;
-    color: black;
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
 }
 
 .genre {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .rating {
-    cursor: pointer;
-
+  cursor: pointer;
 }
 
 .button {
-    width: 75px;
-    height: 75px;
-    font-size: 20px;
-    color: white;
-    font-weight: 800;
-    
-    border-radius: 100%;
-    text-align: center;
-    border: 10px solid darkolivegreen;
-    background-color: #452F6B;
-    cursor: pointer;
+  width: 75px;
+  height: 75px;
+  font-size: 20px;
+  color: white;
+  font-weight: 800;
+  border-radius: 100%;
+  text-align: center;
+  border: 10px solid darkolivegreen;
+  background-color: #452f6b;
+  cursor: pointer;
 }
 
 .buttonRefresh {
-    width: 75px;
-    justify-content: flex-start;
-    border-radius: 100%;
-    margin: 1vh;
-    padding: 8px;   
-    background-color: #452F6B;
-    border: 8px solid darkolivegreen;
-    color: white;
-    font-weight: 800;
-    cursor: pointer;
+  width: 75px;
+  justify-content: flex-start;
+  border-radius: 100%;
+  margin: 1vh;
+  padding: 8px;
+  background-color: #452f6b;
+  border: 8px solid darkolivegreen;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .side-options {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
 }
 
 .btn {
-    display: flex;
-    align-items: center;
-    margin: .5em;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: .7em;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0.5em;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 0.7em;
+  width: 100%;
 }
 
 @media (max-width: 1000px) {
-    .songsaver {
-        flex-direction: column;
-    }
-    .newSong {
-
-    }
+  .songsaver {
+    flex-direction: column;
+  }
+  .newSong {
+  }
 }
