@@ -10,6 +10,7 @@
 
 .dropdown {
   position: absolute;
+  font-size: .9em;
 }
 
 .content {
