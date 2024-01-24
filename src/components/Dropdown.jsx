@@ -1,22 +1,37 @@
-import React, { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Dropdown.css";
 
 function Dropdown({ items, isHovered, setIsHovered, page }) {
   console.log(page);
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleClick = () => {
     setIsOpen(false);
     setIsHovered(false);
   };
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+        setIsHovered(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setIsOpen, setIsHovered]);
+
   // Convert page to a valid CSS class name
   let pageName = page.toLowerCase().replace(/\s+/g, "");
-  console.log(pageName)
+  console.log(pageName);
 
   return (
-    <div className="dropdown-container">
+    <div className="dropdown-container" ref={dropdownRef}>
       <div
         className={`dropdown ${isOpen ? "open" : ""}`}
         onClick={() => {
