@@ -1,9 +1,10 @@
-.home {
+.home-dashboard {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 5px;
-  width: 98vw;
+  width: 100vw;
+  padding: 2%;
+
 }
 
 .labels {
@@ -29,6 +30,14 @@ label {
 .chart-container {
   display: flex;
   justify-content: center;
-  min-width: 1150px;
-  overflow-x: auto;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .home-dashboard {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 0;
+  }
+
 }

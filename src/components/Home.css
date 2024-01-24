@@ -21,6 +21,7 @@
   height: 300px;
   overflow: auto;
   width: 60%;
+  /* border: 5px solid black; */
 }
 
 .picture {
@@ -29,7 +30,6 @@
   max-width: 300px;
   height: auto;
   border-radius: 50%;
-  
 }
 
 .text-div {
@@ -43,7 +43,6 @@
   padding-left: 1.5%;
   line-height: 1.5;
   font-family: "Courier New", Courier, monospace;
-
 }
 
 .name {
@@ -128,9 +127,8 @@
   transform: scale(1.5);
 }
 
-
 @media (max-width: 1100px) {
-  .picture-text-div { 
+  .picture-text-div {
     width: 100%;
   }
 }
@@ -155,5 +153,15 @@
 
   .name {
     padding-bottom: 0;
+  }
+}
+
+@media (max-height: 500px) {
+  .parent-div {
+    padding-bottom: 0;
+  }
+  .dropdown.open .dropdown-menu.project2,
+  .dropdown.open .dropdown-menu.project3 {
+    height: calc(100vh + 200px);
   }
 }

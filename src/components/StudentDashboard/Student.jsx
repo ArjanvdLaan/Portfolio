@@ -29,7 +29,7 @@ function StudentDetail() {
   const [showEnjoyment, setShowEnjoyment] = useState(true);
 
   return (
-    <div className="home">
+    <div className="home-dashboard">
       <div className="labels">
         <label>
           <input

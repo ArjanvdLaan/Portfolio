@@ -54,7 +54,6 @@
   align-items: center;
   justify-content: center;
   margin-left: 0;
-  /* border: 2px solid black; */
 }
 
 
@@ -66,7 +65,7 @@
   width: 20vw;
   box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.5);
   background-color: white;
-
+  height: 100vh;
 }
 
 .dropdown.open .dropdown-menu.project1 {
@@ -196,7 +195,7 @@
   .dropdown.open .dropdown-item {
     height: auto;
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1em;
     justify-content: space-around;
   }
 

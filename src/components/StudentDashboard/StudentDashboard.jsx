@@ -30,12 +30,12 @@ function StudentDashboard() {
         <h6>*Zoom in for more detail & drag for navigation</h6>
       </div>
       <nav>
-        <div >
-          <ul  className="student-links">
+        <div>
+          <ul className="student-links">
             <div className="allStudents">
               <h3>Averages of all students:</h3>
               <li>
-                <Link className="link" to="/page3">
+                <Link className="link" to="/project3">
                   All Students
                 </Link>
               </li>
@@ -44,7 +44,10 @@ function StudentDashboard() {
               <h3>Individual students:</h3>
               {dataByStudentArray.map((student) => (
                 <li key={student.name}>
-                  <Link className="link" to={`/page3/student/${student.name}`}>
+                  <Link
+                    className="link"
+                    to={`/project3/student/${student.name}`}
+                  >
                     {" "}
                     {student.name}
                   </Link>

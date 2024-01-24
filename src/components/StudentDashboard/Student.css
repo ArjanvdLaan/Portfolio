@@ -23,5 +23,11 @@ label {
     display: flex;
     justify-content: center;
     min-width: 1150px;
-    overflow-x: auto;
+  }
+
+  @media (max-width: 1200px) {
+    .home-dashboard {
+      overflow-x: scroll;
+    }
+  
   }
