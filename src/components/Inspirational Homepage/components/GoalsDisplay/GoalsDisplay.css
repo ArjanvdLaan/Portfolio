@@ -73,40 +73,8 @@ li:hover .trash-icon {
     background: rgba(255, 255, 255, 0.6); /* Slightly less transparent when hovered */
   }
 
-/* 
-  @media (max-width: 768px) {
-    li {
-      font-size: 1em;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .goals-display ul  {
-        min-height: 150px;
-        max-height: 150px;
-        width: 90%;
-        max-width: 350px;
-        overflow-y: auto;
-    }
-    li {
-        font-size: 1em;
-        margin: .3em 0.2em 0.3em .2em;
-    }
-    .trash-icon {
-        font-size: .5em;
-    }
-  }
-
-@media (max-width: 768px) and (orientation: landscape) {
-  .goals-display ul {
-    min-height: 100px;
-    max-height: 100px;
-    width: 90%;
-    max-width: 350px;
+  @media (orientation: landscape) and (max-width: 700px) {
+.goals-display ul {
+    max-height: 180px;
     overflow-y: auto;
   }
-
-  li {
-    font-size: .7em;
-  }
-} */

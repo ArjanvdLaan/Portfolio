@@ -67,12 +67,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 1em;
   }
 
   .goals-and-weather {
     display: flex;
-    /* width: 95%; */
     gap: 1em;
     align-items: flex-end;
   }
@@ -89,9 +87,6 @@
 }
 
 @media (max-width: 600px) {
-  /* .weather-box {
-    display: none;
-  } */
 
   .goals-and-weather {
     justify-content: center;
@@ -120,5 +115,14 @@
 @media (max-width: 768) and (orientation: landscape) {
   .parent-div {
     justify-content: space-between;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 700px) {
+  .quote-box-div {
+    display: none;
+  }
+  .goals-box {
+    /* margin-bottom: 10px;  */
   }
 }

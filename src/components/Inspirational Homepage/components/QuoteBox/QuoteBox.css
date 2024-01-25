@@ -1,9 +1,6 @@
 .quote-box {
   padding: 20px;
   border-radius: 10px;
-  /* margin-top: 3.5em; */
-  /* background-color: rgba(255, 255, 255, 0.2); */
-  /* margin-top: 20%; */
 }
 
 .quoteContent {
@@ -68,5 +65,11 @@ cite {
   cite {
     font-size: .8em;
     margin-top: 0;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 425px) {
+  .quote-box {
+    display: none;
   }
 }

@@ -71,7 +71,7 @@ export const WeatherBox = () => {
   return (
     <div className="weather-box">
       {data ? (
-        <p>
+        <p className="weather-p">
           <img className="weather-icon" src={iconUrl} alt="Weather icon" />
           <span className="weather-container">
           <span className="weather-degrees">

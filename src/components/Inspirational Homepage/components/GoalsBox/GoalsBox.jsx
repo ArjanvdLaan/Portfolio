@@ -18,7 +18,7 @@ export const GoalsBox = () => {
   };
 
   return (
-    <div className="goals-box">
+    <div className="goals-box"  >
       <GoalsInputBar setGoals={setGoals} />
       <GoalsDisplay goals={goals} removeGoal={removeGoal} setGoals={setGoals} />
     </div>
