@@ -48,3 +48,9 @@ th {
     color: white;
     font-size: 25px;
 }
+
+@media (max-width: 500px) and (orientation: portrait) {
+    .song-row-item {
+        font-size: 1em;
+    }
+}

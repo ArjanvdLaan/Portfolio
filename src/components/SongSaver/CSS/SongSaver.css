@@ -88,6 +88,25 @@
   .songsaver {
     flex-direction: column;
   }
-  .newSong {
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+  .input-width {
+    text-indent: 25%;
+    padding: 0;
+  }
+
+  .input-width::placeholder {
+    font-size: 0.7em;
+  }
+
+  .genre {
+    padding: 0;
+    text-indent: 10%;
+  }
+
+  .rating {
+    padding: 0;
+    text-indent: 10%;
   }
 }

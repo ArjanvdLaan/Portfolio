@@ -20,3 +20,9 @@
 .delBtn {
   cursor: pointer;
 }
+
+@media (max-width: 500px) and (orientation: portrait) {
+  .playlist-item {
+      font-size: .7em;
+  }
+}

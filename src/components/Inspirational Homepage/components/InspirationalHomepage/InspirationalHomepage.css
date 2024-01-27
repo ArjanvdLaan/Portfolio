@@ -74,20 +74,16 @@
     gap: 1em;
     align-items: flex-end;
   }
-.weather-box {
+  .weather-box {
     width: 50%;
   }
 
   .goals-box {
     width: 100%;
   }
-  .quote-box {
-    width: 100%;/
-  }
 }
 
 @media (max-width: 600px) {
-
   .goals-and-weather {
     justify-content: center;
     max-width: 90%;
@@ -99,7 +95,7 @@
 }
 
 @media (max-width: 425px) {
-.goals-and-weather {
+  .goals-and-weather {
     flex-direction: row;
     justify-content: center;
   }
@@ -112,17 +108,19 @@
   }
 }
 
-@media (max-width: 768) and (orientation: landscape) {
+@media (max-width: 900px) and  (orientation: landscape) {
   .parent-div {
-    justify-content: space-between;
+    align-content: space-around;
   }
-}
 
-@media (orientation: landscape) and (max-width: 700px) {
+  .weather-box {
+    width: 40%;
+  }
   .quote-box-div {
     display: none;
   }
-  .goals-box {
-    /* margin-bottom: 10px;  */
+
+  .fill-up-space-div {
+    height: 0;
   }
 }

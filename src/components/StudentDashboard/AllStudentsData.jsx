@@ -12,6 +12,7 @@ import {
 import data from "./studentsData.js";
 
 function Home() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
   const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
 
   // Group the data by exercise
@@ -56,6 +57,9 @@ function Home() {
 
   return (
     <div className="home-dashboard">
+      {isMobile && (
+        <div>Please visit this page on desktop for optimal experience.</div>
+      )}
       <div className="labels">
         <label className="checkbox">
           <input
@@ -80,7 +84,13 @@ function Home() {
           height={1200}
           theme={VictoryTheme.material}
           domainPadding={40}
-          containerComponent={<VictoryZoomVoronoiContainer responsive={true} />}
+          containerComponent={
+            <VictoryZoomVoronoiContainer
+              responsive={true}
+              allowZoom={true}
+              allowPan={true}
+            />
+          }
           padding={{ bottom: 260, left: 55 }}
         >
           <VictoryLegend
