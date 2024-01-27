@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import AllStudentsData from "./AllStudentsData.jsx";
 import StudentDetail from "./Student";
@@ -5,6 +6,29 @@ import "./StudentDashboard.css";
 import data from "./studentsData.js";
 
 function StudentDashboard() {
+  /* .................................................................................................... */
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      console.log("Window width: ", window.innerWidth);
+      setIsMobile(window.innerWidth <= 800);
+    };
+
+    // Attach the event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty dependency array means this effect runs once on mount and clean up on unmount
+
+  console.log("Is mobile: ", isMobile);
+
+  /* .................................................................................................... */
+
   // Group the data by student
   const dataByStudent = data.reduce((acc, task) => {
     const exercise = task["Wie ben je?"];
@@ -23,44 +47,57 @@ function StudentDashboard() {
 
   return (
     <div className="student-dashboard">
-      <div className="title">
-        <h2>React(& Victory) Student Dashboard</h2>
-      </div>
-      <div className="subHeader">
-        <h6>*Zoom in for more detail & drag for navigation</h6>
-      </div>
-      <nav>
-        <div>
-          <ul className="student-links">
-            <div className="allStudents">
-              <h3>Averages of all students:</h3>
-              <li>
-                <Link className="link" to="/project3">
-                  All Students
-                </Link>
-              </li>
+      {isMobile ? (
+        <>
+          <div className="mobile-message">
+          <div className="title-mobile">
+            <h2>React(& Victory) Student Dashboard</h2>
+          </div>
+          <div className="message">Please visit this page on a bigger screen (800px wide or more) for optimal experience.</div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="title">
+            <h2>React(& Victory) Student Dashboard</h2>
+          </div>
+          <div className="subHeader">
+            <h6>*Zoom in for more detail & drag for navigation</h6>
+          </div>
+          <nav>
+            <div>
+              <ul className="student-links">
+                <div className="allStudents">
+                  <h3>Averages of all students:</h3>
+                  <li>
+                    <Link className="link" to="/project3">
+                      All Students
+                    </Link>
+                  </li>
+                </div>
+                <div className="student">
+                  <h3>Individual students:</h3>
+                  {dataByStudentArray.map((student) => (
+                    <li key={student.name}>
+                      <Link
+                        className="link"
+                        to={`/project3/student/${student.name}`}
+                      >
+                        {" "}
+                        {student.name}
+                      </Link>
+                    </li>
+                  ))}
+                </div>
+              </ul>
             </div>
-            <div className="student">
-              <h3>Individual students:</h3>
-              {dataByStudentArray.map((student) => (
-                <li key={student.name}>
-                  <Link
-                    className="link"
-                    to={`/project3/student/${student.name}`}
-                  >
-                    {" "}
-                    {student.name}
-                  </Link>
-                </li>
-              ))}
-            </div>
-          </ul>
-        </div>
-      </nav>
-      <Routes>
-        <Route path="/" element={<AllStudentsData />} />
-        <Route path="/student/:name" element={<StudentDetail />} />
-      </Routes>
+          </nav>
+          <Routes>
+            <Route path="/" element={<AllStudentsData />} />
+            <Route path="/student/:name" element={<StudentDetail />} />
+          </Routes>
+        </>
+      )}
     </div>
   );
 }

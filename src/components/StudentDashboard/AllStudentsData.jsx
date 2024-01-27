@@ -12,7 +12,7 @@ import {
 import data from "./studentsData.js";
 
 function Home() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800)
+  
   const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
 
   // Group the data by exercise
@@ -57,9 +57,6 @@ function Home() {
 
   return (
     <div className="home-dashboard">
-      {isMobile && (
-        <div>Please visit this page on desktop for optimal experience.</div>
-      )}
       <div className="labels">
         <label className="checkbox">
           <input
