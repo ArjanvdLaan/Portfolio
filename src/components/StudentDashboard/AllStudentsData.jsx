@@ -12,7 +12,7 @@ import {
 import data from "./studentsData.js";
 
 function Home() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800)
   const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
 
   // Group the data by exercise
