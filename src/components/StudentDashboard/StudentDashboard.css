@@ -77,4 +77,11 @@ h2 {
   justify-content: center;  
   margin-top: 20%;
   font-size: .8em;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  h2 {
+    text-align: center;
+  }
 }
