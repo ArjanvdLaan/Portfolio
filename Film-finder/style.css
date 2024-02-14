@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #7f0920;
+  color: #0a0408;
+  display: flex;
+  flex-direction: column;
+}
+
+#appTitle {
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  font-family: "Staatliches", sans-serif;
+  font-size: 80px;
+}
+
+#genreForm,
+#playBtn {
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  font-family: "Fredoka One", sans-serif;
+}
+
+#movieInfo {
+  width: 100%;
+  margin: 32px auto;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  padding: 0 2em;
+}
+
+#movieInfo:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#moviePoster {
+  grid-column: 2 / 3;
+  /* border: 2px solid purple; */
+  height: 100%;
+}
+
+img#moviePoster {
+  height: 60vh;
+  width: 100%;
+}
+
+#movieText {
+  font-family: "Questrial";
+  color: #fefbea;
+  line-height: 1.25;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  grid-column: 3 / 4;
+  /* border: 2px solid red; */
+}
+
+/* liked movies div */
+
+#likedMovies {
+  /* border: 2px solid green; */
+  grid-column: 5 / 6;
+  /* width: 100%; */
+  display: flex;
+  overflow: auto;
+  max-width: 60vh;
+}
+
+#listLikedMovies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 1em;
+  color: white;
+}
+
+#listLikedMovies > li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+#likedMoviePoster {
+  width: 50px;
+  height: 90px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#movieTitle,
+#movieOverview,
+.vote-average,
+.release-date {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.release-date {
+  padding: 32px;
+}
+
+#playBtn {
+  margin-top: 20px;
+  font-size: 25px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #b97828;
+  color: #fdc238;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  font-size: 35px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  
+}
+
+select {
+  width: 100px;
+  height: auto;
+  background-color: #b97828;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-family: "Fredoka One", sans-serif;
+  color: #fdc238;
+}
+
+#likeOrDislikeBtns {
+  text-align: center;
+  margin: 0px auto;
+  /* border: 2px solid blue; */
+}
+
+#likeBtn,
+#dislikeBtn {
+  padding: 15px 25px;
+  font-size: 25px;
+  border-radius: 12px;
+  border-style: none;
+  cursor: pointer;
+}
+
+#likeBtn {
+  background-color: #249e57;
+  color: darkgreen;
+}
+
+#dislikeBtn {
+  background-color: #c74a4a;
+  color: #910000;
+}
+
+/* This is the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #7f0920; /* Match the background color */
+}
+
+/* This is the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #b97828;; /* Match the black color */
+}
+
+/* Add a hover effect to the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #fdc238;
+}
+
+
