@@ -178,7 +178,7 @@ select {
 
 /* This is the scrollbar handle */
 ::-webkit-scrollbar-thumb {
-  background: #b97828;; /* Match the black color */
+  background: #b97828;; 
 }
 
 /* Add a hover effect to the scrollbar handle */
@@ -186,4 +186,19 @@ select {
   background: #fdc238;
 }
 
-
+.back-arrow {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f8f9fa;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1em;
+  color: #fdc238;
+  background-color: #b97828;
+}
