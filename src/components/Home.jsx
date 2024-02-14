@@ -38,7 +38,7 @@ const Home = () => {
                       {" "}
                       A React-focused{" "}
                       <FontAwesomeIcon className="react" icon={faReact} />{" "}
-                      <br /> Front-End Developer <br /> with a practical touch{" "}
+                      <br /> frontend Developer <br /> with a practical touch{" "}
                       <br /> of Python backend{" "}
                       <FontAwesomeIcon className="python" icon={faPython} />{" "}
                       <br /> know-how.

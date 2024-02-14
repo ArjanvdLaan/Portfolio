@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #fdc238
 }
 
 body {
@@ -29,7 +30,7 @@ body {
 
 #movieInfo {
   width: 100%;
-  margin: 32px auto;
+  margin: 20px auto;
   height: 60vh;
   display: grid;
   grid-template-columns: repeat(5, 20%);
@@ -55,7 +56,6 @@ img#moviePoster {
 
 #movieText {
   font-family: "Questrial";
-  color: #fefbea;
   line-height: 1.25;
   display: flex;
   flex-direction: column;
@@ -81,8 +81,8 @@ img#moviePoster {
   flex-direction: column;
   align-items: center;
   margin-top: 5px;
-  font-size: 1em;
-  color: white;
+  font-size: .9em;
+  font-family: "Questrial";
 }
 
 #listLikedMovies > li {
@@ -120,13 +120,11 @@ img#moviePoster {
   border-radius: 10px;
   border-style: none;
   background-color: #b97828;
-  color: #fdc238;
   cursor: pointer;
 }
 
 label {
   display: block;
-  font-size: 35px;
   margin-bottom: 5px;
   font-size: 25px;
   
@@ -145,7 +143,7 @@ select {
 #likeOrDislikeBtns {
   text-align: center;
   margin: 0px auto;
-  /* border: 2px solid blue; */
+  padding-bottom: 10px;
 }
 
 #likeBtn,
