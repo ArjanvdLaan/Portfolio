@@ -64,6 +64,7 @@ function Dropdown({ items, isHovered, setIsHovered, page }) {
                 {item}
               </Link>
             ))}
+             <a className= "linkFilmFinder" href="/Film-finder/index.html">Vanilla JS</a>
           </div>
         )}
       </div>

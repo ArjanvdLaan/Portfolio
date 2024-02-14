@@ -66,6 +66,9 @@
   box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.5);
   background-color: white;
   height: 100vh;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;   */
 }
 
 .dropdown.open .dropdown-menu.project1 {
@@ -95,6 +98,15 @@
   font-family: "Courier New", Courier, monospace;
   font-size: 1.2em;
   font-weight: 500;
+}
+
+.linkFilmFinder {
+  background-color: black;
+  color: white;
+  max-height: 70px;
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
 }
 
 .dropdown.open .dropdown-item {
