@@ -24,8 +24,8 @@ const getMovies = async () => {
   const selectedGenre = getSelectedGenre();
   const discoverMovieEndpoint = `/discover/movie`;
   const requestParams = `?api_key=${tmdbKey}&with_genres=${selectedGenre}`;
-  // Generate a random number of pages to fetch between 10 and 50
-  const pagesToFetch = Math.floor(Math.random() * 41) + 10;
+  // Generate a random number of pages to fetch between 5 and 15 
+  const pagesToFetch = Math.floor(Math.random() * 10) + 5;
   let movies = [];
 
   // Loop over the number of pages to fetch the specified amount
@@ -76,16 +76,19 @@ const showRandomMovie = async () => {
   const randomMovie = getRandomMovie(movies);
   const info = await getMovieInfo(randomMovie);
   // console.log(info);
-  currentMovie.push(info);
-  console.log( `Current Movie: ${currentMovie[0].title}`);
+
+  currentMovie[0] = info;
+  console.log(`Current Movie: ${currentMovie[0].title}`);
+
   if (moviePoster.childNodes.length == 0) {
     displayMovie(info);
   }
+
   console.log(`Info: ${info.title}`);
   // return info;
 };
 
-
+let likedMovies = [];
 
 const displayLikedMovie = async (movieInfo) => {
   const movieList = document.getElementById("listLikedMovies");
@@ -106,11 +109,13 @@ const displayLikedMovie = async (movieInfo) => {
   img.setAttribute("id", "likedMoviePoster");
   img.setAttribute(
     "src",
-    `https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`
+    `https://image.tmdb.org/t/p/w92${movieInfo.poster_path}`
   );
 
   movieList.appendChild(li).appendChild(a).appendChild(img);
   li.appendChild(h3);
+
+  likedMovies.push(movieInfo);
 };
 
 getGenres().then(populateGenreDropdown);

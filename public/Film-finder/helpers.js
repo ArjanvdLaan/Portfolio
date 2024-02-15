@@ -62,7 +62,7 @@ const displayMovie = (movieInfo) => {
   const voteAverage = createMovieVoteAverage(movieInfo.vote_average);
   const releaseDate = createMovieReleaseDate(movieInfo.release_date);
 
-  console.log('movieInfogenre: ' + movieInfo.id);
+  console.log("movieInfogenre: " + movieInfo.id);
   // Append title, poster, popularity, and overview to page
   moviePosterDiv.appendChild(moviePoster);
   movieTextDiv.appendChild(titleHeader);
@@ -77,7 +77,7 @@ const displayMovie = (movieInfo) => {
 
 // Create HTML for movie poster
 const createMoviePoster = (posterPath, imdb_id) => {
-  const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
+  const moviePosterUrl = `https://image.tmdb.org/t/p/w342/${posterPath}`;
   console.log(`posterURL: ${posterPath}`);
 
   const posterImg = document.createElement("img");
@@ -128,7 +128,7 @@ const createMovieVoteAverage = (vote_avg) => {
 const createMovieReleaseDate = (release_date) => {
   const releaseDateDiv = document.createElement("div");
   releaseDateDiv.setAttribute("class", "release-date");
-  releaseDateDiv.innerHTML = 'Release date: ' + release_date;
+  releaseDateDiv.innerHTML = "Release date: " + release_date;
 
   console.log(`release date: ${release_date}`);
 
