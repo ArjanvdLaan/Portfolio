@@ -26,8 +26,17 @@ const showBtns = () => {
 const clearCurrentMovie = () => {
   const moviePosterDiv = document.getElementById("moviePoster");
   const movieTextDiv = document.getElementById("movieText");
-  moviePosterDiv.innerHTML = "";
-  movieTextDiv.innerHTML = "";
+  // Clear all child nodes of moviePosterDiv
+  while (moviePosterDiv.firstChild) {
+    moviePosterDiv.removeChild(moviePosterDiv.firstChild);
+  }
+
+  // Clear all child nodes of movieTextDiv, except for #likeOrDislikeBtns
+  Array.from(movieTextDiv.childNodes).forEach(child => {
+    if (child.id !== 'likeOrDislikeBtns') {
+      movieTextDiv.removeChild(child);
+    }
+  });
 };
 
 // After liking a movie, clears the current movie from the screen and gets another random movie
