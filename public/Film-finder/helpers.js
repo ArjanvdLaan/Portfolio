@@ -26,17 +26,21 @@ const showBtns = () => {
 const clearCurrentMovie = () => {
   const moviePosterDiv = document.getElementById("moviePoster");
   const movieTextDiv = document.getElementById("movieText");
+  // const containerTextAndBtns = document.getElementById("containerTextAndBtns");
   // Clear all child nodes of moviePosterDiv
   while (moviePosterDiv.firstChild) {
     moviePosterDiv.removeChild(moviePosterDiv.firstChild);
   }
 
-  // Clear all child nodes of movieTextDiv, except for #likeOrDislikeBtns
+  // Clear all child nodes of movieTextDiv
   Array.from(movieTextDiv.childNodes).forEach(child => {
-    if (child.id !== 'likeOrDislikeBtns') {
+    // console.log("child: ", child);
       movieTextDiv.removeChild(child);
-    }
   });
+
+  // Hide the like and dislike buttons
+  const btnDiv = document.getElementById("likeOrDislikeBtns");
+  btnDiv.setAttribute("hidden", true);
 };
 
 // After liking a movie, clears the current movie from the screen and gets another random movie

@@ -222,3 +222,12 @@
     visibility: hidden;
   }
 }
+
+@media (max-width: 500px) {
+  .dropdown.open .dropdown-item {
+    text-align: center;
+  }
+  .linkFilmFinder {
+    text-align: center;
+  }
+}
