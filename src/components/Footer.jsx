@@ -59,7 +59,6 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
                   method="POST"
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
-                  value="contact"
                 >
                   <label>
                     Name:
@@ -73,7 +72,6 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
                   <label>
                     Message:
                     <textarea
-                      type="text"
                       name="message"
                       className="formInputTagHome"
                       onChange={handleMessageChange}
@@ -96,7 +94,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
         )}
       </footer>
 
-      <form hidden name="contact" data-netlify="true" value="contact"></form>
+      <form hidden name="contact" data-netlify="true"></form>
     </>
   );
 };
