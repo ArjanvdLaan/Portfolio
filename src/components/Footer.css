@@ -1,0 +1,75 @@
+.footerHome {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  border: 2px solid black;
+  box-shadow: 0 0 4px 2px darkgray;
+}
+
+.submitForm label {
+  color: black;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.formInputTagHome {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-left: 1em;
+  width: 80%;
+  color: black;
+}
+
+.submitBtn {
+  background-color: grey;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: darkgrey;
+}
+
+.emailIcon {
+  font-size: 2.5em;
+  font-weight: 600;
+  cursor: pointer;
+}

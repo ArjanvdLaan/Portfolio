@@ -8,15 +8,23 @@ import {
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import CodecademyIcon from "./codecademy-icon.svg";
+import { Footer } from "./Footer";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const handleClick = () => {
     setCurrentPage((currentPage % 3) + 1);
   };
+
+  const toggleOverlay = () => {
+    setShowOverlay(!showOverlay);
+  };
+
   return (
     <>
       <div className="parent-div">
@@ -56,8 +64,8 @@ const Home = () => {
                 <>
                   <div className="sub-text">
                     <blockquote className="tagline">
-                      Check the responsive <br /> pages in the menu <br /> for some of my{" "}
-                      <br />
+                      Check the responsive <br /> pages in the menu <br /> for
+                      some of my <br />
                       projects!
                     </blockquote>
                     <FontAwesomeIcon
@@ -113,6 +121,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <Footer showOverlay={showOverlay} toggleOverlay={toggleOverlay} />
       </div>
     </>
   );
