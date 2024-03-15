@@ -20,7 +20,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
     setMessage(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 };
 
