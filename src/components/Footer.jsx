@@ -7,6 +7,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -22,6 +23,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsSubmitted(true);
   };
 
   return (
@@ -34,42 +36,59 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
         />
         {showOverlay && (
           <div className="overlay">
-            <button onClick={toggleOverlay}>Close</button>
-            <form
-              className="submitForm"
-              onSubmit={handleSubmit}
-              name="contact"
-              data-netlify="true"
-            >
-              <label>
-                Name:
-                <input
-                  type="text"
-                  name="name"
-                  className="formInputTagHome"
-                  onChange={handleNameChange}
-                />
-              </label>
-              <label>
-                Message:
-                <textarea
-                  type="text"
-                  name="message"
-                  className="formInputTagHome"
-                  onChange={handleMessageChange}
-                />
-              </label>
-              <label>
-                Email:
-                <input
-                  type="email"
-                  name="email"
-                  className="formInputTagHome"
-                  onChange={handleEmailChange}
-                />
-              </label>
-              <input type="submit" value="Submit" className="submitBtn" />
-            </form>
+            {isSubmitted ? (
+              <div className="submitForm">
+                <h1>Form successfully submitted!</h1>
+                <p>Thanks for your submission. I'll get back to you soon.</p>
+                <button
+                  onClick={() => {
+                    toggleOverlay();
+                    setIsSubmitted(false);
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+            ) : (
+              <>
+                <button onClick={toggleOverlay}>Close</button>
+                <form
+                  className="submitForm"
+                  onSubmit={handleSubmit}
+                  name="contact"
+                  data-netlify="true"
+                >
+                  <label>
+                    Name:
+                    <input
+                      type="text"
+                      name="name"
+                      className="formInputTagHome"
+                      onChange={handleNameChange}
+                    />
+                  </label>
+                  <label>
+                    Message:
+                    <textarea
+                      type="text"
+                      name="message"
+                      className="formInputTagHome"
+                      onChange={handleMessageChange}
+                    />
+                  </label>
+                  <label>
+                    Email:
+                    <input
+                      type="email"
+                      name="email"
+                      className="formInputTagHome"
+                      onChange={handleEmailChange}
+                    />
+                  </label>
+                  <input type="submit" value="Submit" className="submitBtn" />
+                </form>
+              </>
+            )}
           </div>
         )}
       </footer>

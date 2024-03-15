@@ -36,6 +36,10 @@
   box-shadow: 0 0 4px 2px darkgray;
 }
 
+.submitForm h1, .submitForm p{
+  margin-bottom: 20px;
+}
+
 .submitForm label {
   color: black;
   margin-bottom: 10px;
