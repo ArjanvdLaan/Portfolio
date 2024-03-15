@@ -56,7 +56,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
                   className="submitForm"
                   onSubmit={handleSubmit}
                   name="contact"
-                  method= "POST"
+                  netlify
                   data-netlify="true"
                 >
                   <label>
