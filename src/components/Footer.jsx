@@ -59,6 +59,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
                   method="POST"
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
+                  value="contact"
                 >
                   <label>
                     Name:
@@ -99,6 +100,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
         hidden
         name="contact"
         data-netlify="true"
+        value="contact"
       ></form>
     </>
   );
