@@ -65,7 +65,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
                     Name:
                     <input
                       type="text"
-                      name="name"
+                      name="stateYourName"
                       className="formInputTagHome"
                       onChange={handleNameChange}
                     />
@@ -88,7 +88,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
                       onChange={handleEmailChange}
                     />
                   </label>
-                  <input type="submit" value="Submit" className="submitBtn" />
+                  <input type="submit" value="submit" className="submitBtn" />
                 </form>
               </>
             )}
@@ -96,12 +96,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
         )}
       </footer>
 
-      <form
-        hidden
-        name="contact"
-        data-netlify="true"
-        value="contact"
-      ></form>
+      <form hidden name="contact" data-netlify="true" value="contact"></form>
     </>
   );
 };
