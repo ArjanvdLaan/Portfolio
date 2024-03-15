@@ -94,7 +94,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
         )}
       </footer>
       <div style={{ display: "none" }}>
-        <form name="contact" data-netlify="true"></form>
+        <form name="contact" netlify data-netlify="true"></form>
       </div>
     </>
   );
