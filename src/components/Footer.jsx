@@ -33,7 +33,7 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
     // Make a POST request to the form's action URL
     fetch('/', {
       method: 'POST',
-      headers: { 'Accept': 'application/x-www-form-urlencoded' },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString()
     })
     .then(() => {
