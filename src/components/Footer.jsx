@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
 
 export const Footer = ({ showOverlay, toggleOverlay }) => {
@@ -26,22 +26,22 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
 
     // Create a FormData instance from the form event
     const formData = new FormData(event.target);
-  
+
     // Add the form-name field for Netlify
-    formData.append('form-name', 'contact');
-  
+    formData.append("form-name", "contact");
+
     // Make a POST request to the form's action URL
-    fetch('/', {
-      method: 'POST',
+    fetch("/", {
+      method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
+      body: new URLSearchParams(formData).toString(),
     })
-    .then(() => {
-      setIsSubmitted(true);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+      .then(() => {
+        setIsSubmitted(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -56,20 +56,20 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
           <div className="overlay">
             {isSubmitted ? (
               <div className="submitForm">
-                <h1>Form successfully submitted!</h1>
-                <p>Thanks for your submission. I'll get back to you soon.</p>
                 <button
                   onClick={() => {
                     toggleOverlay();
                     setIsSubmitted(false);
                   }}
+                  className="closeBtn"
                 >
-                  Close
+                  <FontAwesomeIcon icon={faTimes} />
                 </button>
+                <h1>Form successfully submitted!</h1>
+                <p>Thanks for your submission. I'll get back to you soon.</p>
               </div>
             ) : (
               <>
-                <button onClick={toggleOverlay}>Close</button>
                 <form
                   className="submitForm"
                   onSubmit={handleSubmit}
@@ -78,6 +78,14 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
                 >
+                  {" "}
+                  <button onClick={toggleOverlay} className="closeBtn">
+                    <FontAwesomeIcon icon={faTimes} />
+                  </button>
+                  <p>
+                    Please leave your message here and I'll get back to you
+                    soon!{" "}
+                  </p>
                   <label>
                     Name:
                     <input
