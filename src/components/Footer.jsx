@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, URLSearchParams } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
@@ -23,7 +23,25 @@ export const Footer = ({ showOverlay, toggleOverlay }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setIsSubmitted(true);
+
+    // Create a FormData instance from the form event
+    const formData = new FormData(event.target);
+  
+    // Add the form-name field for Netlify
+    formData.append('form-name', 'contact');
+  
+    // Make a POST request to the form's action URL
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Accept': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      setIsSubmitted(true);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
   };
 
   return (
