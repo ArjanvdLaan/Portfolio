@@ -138,7 +138,7 @@
   .picture-text-div {
     flex-direction: column;
     height: 100%;
-    margin-top: 8vh;
+    margin-top: 4vh;
   }
 
   .text-div {
@@ -150,6 +150,8 @@
 
   .picture {
     margin-bottom: 5%;
+    width: 220px;
+    /* border: 2px solid black; */
   }
 
   .name {

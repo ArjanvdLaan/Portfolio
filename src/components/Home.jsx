@@ -8,7 +8,6 @@ import {
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import CodecademyIcon from "./codecademy-icon.svg";
 import { Footer } from "./Footer";
@@ -46,7 +45,7 @@ const Home = () => {
                       {" "}
                       A React-focused{" "}
                       <FontAwesomeIcon className="react" icon={faReact} />{" "}
-                      <br /> frontend Developer <br /> with a practical touch{" "}
+                      <br /> frontend developer <br /> with a practical touch{" "}
                       <br /> of Python backend{" "}
                       <FontAwesomeIcon className="python" icon={faPython} />{" "}
                       <br /> know-how.

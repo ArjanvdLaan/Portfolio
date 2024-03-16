@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   width: 50%;
-  height: 50%;
+  height: 60%;
   background-color: white;
   border-radius: 10px;
   padding: 20px;
@@ -38,9 +38,13 @@
   box-shadow: 0 0 4px 2px darkgray;
 }
 
-.submitForm h1,
 .submitForm p {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.submitForm h1 {
+  margin-bottom: 20px;
 }
 
 .submitForm label {
@@ -90,4 +94,31 @@
   right: 10px;
   background-color: white;
   border: none;
+}
+
+@media (max-width: 1100px) {
+  .submitForm {
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  .submitForm {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .submitForm {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .submitForm {
+    height: 70%;
+  }
+
+  .submitForm label {
+    width: 100%;}
 }
