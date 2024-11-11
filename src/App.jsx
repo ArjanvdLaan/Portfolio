@@ -39,7 +39,7 @@ function MainContent() {
       <div className={`content ${isHovered ? "blurred" : ""}`}>
         <Dropdown
           className="dropdown"
-          items={["Home", "Inspirational Homepage"]}
+          items={["Home", "Inspirational Homepage" ]}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
           page={page} 
