@@ -19,13 +19,13 @@ function MainContent() {
 
   switch (location.pathname) {
     case "/":
-      page = "home";
+      page = "Home";
       break;
-    case "/project1":
-      page = "Project 1";
+    case "/inspirationalhomepage":
+      page = "Inspirational Homepage";
       break;
-    case "/project2":
-      page = "Project 2";
+    case "/Film-finder/index.html":
+      page = "Film Finder";
       break;
     case "/project3":
       page = "Project 3";
@@ -39,7 +39,7 @@ function MainContent() {
       <div className={`content ${isHovered ? "blurred" : ""}`}>
         <Dropdown
           className="dropdown"
-          items={["Home", "Project 1", "Project 2", "Project 3"]}
+          items={["Home", "Inspirational Homepage"]}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
           page={page} 
@@ -47,7 +47,7 @@ function MainContent() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project1" element={<Page1 />} />
+          <Route path="/inspirationalhomepage" element={<Page1 />} />
           <Route path="/project2" element={<Page2 />} />
           <Route path="/project3/*" element={<StudentDashboard />} />
         </Routes>

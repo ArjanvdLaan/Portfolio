@@ -34,7 +34,7 @@
   color: black;
 }
 
-.hamburger-icon.project1 {
+.hamburger-icon.inspirationalhomepage {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -71,7 +71,7 @@
   justify-content: center;   */
 }
 
-.dropdown.open .dropdown-menu.project1 {
+.dropdown.open .dropdown-menu.inspirationalhomepage {
   background-color: rgba(255, 255, 255, 0.3);
   font-weight: 800;
 }
@@ -129,11 +129,11 @@
   color: white;
 }
 
-.dropdown.open .dropdown-item.project1 {
+.dropdown.open .dropdown-item.inspirationalhomepage{
   color: rgba(255, 255, 255, 0.8);
 }
 
-.dropdown.open .dropdown-item.project1:hover {
+.dropdown.open .dropdown-item.inspirationalhomepage:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 

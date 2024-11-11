@@ -28,7 +28,7 @@ function Dropdown({ items, isHovered, setIsHovered, page }) {
 
   // Convert page to a valid CSS class name
   let pageName = page.toLowerCase().replace(/\s+/g, "");
-  console.log(pageName);
+  console.log("pageName:", pageName);
 
   return (
     <div className="dropdown-container" ref={dropdownRef}>
@@ -64,7 +64,7 @@ function Dropdown({ items, isHovered, setIsHovered, page }) {
                 {item}
               </Link>
             ))}
-             <a className= "linkFilmFinder" href="/Film-finder/index.html">Vanilla JS</a>
+             <a className={`dropdown-item ${pageName} ${isOpen ? "open" : ""}`}  href="/Film-finder/index.html">Film Finder</a>
           </div>
         )}
       </div>
