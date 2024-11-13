@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.space-div {
+  height: 70px;
+}
+
+.homepage-container {
+  position: relative; /* Ensure the container is positioned relative to its parent */
+  /* min-height: 100vh; Ensure the container takes the full viewport height */
+}
+
+.title-container {
+  position: fixed; /* Position the container absolutely */
+  bottom: 10px;
+  right: 10px;
+  /* height: 100px; Set the height of the containe  r */
+}
+
+.vote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  grid-area: title;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  overflow: hidden;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.upvotes {
+  grid-area: upvotes;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  color: black;
+  grid-area: info;
+  display: flex;
+  align-items: flex-end;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.7em;
+  justify-content: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 20% 40% 40%; /* Sets the width of the columns */
+  grid-template-rows: 10% 80% 10%; /* Sets the height of the rows */
+  grid-template-areas:
+    "title title title"
+    "upvotes image image"
+    "nada info info";
+  list-style-type: none;
+  border: 1px solid beige;
+  margin: 10px;
+  padding: 10px;
+  height: 500px;
+  width: 600px;
+  box-shadow: 30px 30px 5px 0px grey;
+  border-radius: 5%;
+  margin-bottom: 40px;
+}
+
+.nada {
+  grid-area: nada;
+}
+
+.nada,
+.info {
+  border-top: 2px solid rgb(242, 240, 240);
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .post {
+    width: 90%;
+  }
+  
+}

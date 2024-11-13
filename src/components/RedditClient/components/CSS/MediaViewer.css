@@ -1,0 +1,226 @@
+.anchor-tag {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.text-content,
+.text-content-fullscreen {
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  font-style: italic;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: scroll;
+}
+
+.text-content-fullscreen {
+  color: white;
+  max-width: 50%;
+}
+
+.image,
+.video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.image-fullscreen,
+.video-fullscreen {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 8px;
+  width: 100vh;
+  height: auto;
+}
+
+.gallery-container {
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.arrow {
+  background-color: black;
+  border: none;
+}
+
+.arrow-left {
+  width: 30px;
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer
+}
+
+.arrow-right {
+  width: 30px;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.gallery-indicator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.image-indicator {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* Needed for z-index stacking */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+
+}
+
+.gallery-indicator {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1; /* Layer above Element 1 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* Needed for z-index stacking */
+  width: 20%;
+  height: 20%;
+  top: 40%;
+  left: 40%;
+  color: white;
+  backdrop-filter: blur(1px);
+  text-align: center;
+  font-weight: bold;
+}
+
+.gallery-image {
+  width: 90%;
+  height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.gallery-indicator-container.hide-indicators .image-indicator,
+.gallery-indicator-container.hide-indicators .gallery-indicator,
+.gallery-indicator-container {
+  z-index: 0;
+}
+
+/* Fullscreen overlay that covers the entire screen */
+.media-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.8); Dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  backdrop-filter: blur(
+    7px
+  ); /* Apply blur to the background behind the overlay */
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* MediaViewer content container */
+.media-viewer-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 2;
+}
+
+.media-viewer-content > video {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.media-viewer-content > img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+/* Full-screen media (image/video) */
+.media-full {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  color: white;
+  padding-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Link to original post */
+.post-link {
+  display: block;
+  margin: 10px 0;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+/* Optional: Blurred background effect when MediaViewer is open */
+.blur-background {
+  filter: blur(5px); /* Apply a blur to the background */
+}
+
+@media screen and (max-width: 800px) {
+  
+
+}

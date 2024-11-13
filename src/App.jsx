@@ -7,8 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./components/Home";
 import Page1 from "./components/Inspirational Homepage/Page1";
-import Page2 from "./components/SongSaver/Page2";
-import StudentDashboard from "./components/StudentDashboard/StudentDashboard.jsx";
+import TopComponent from "./components/RedditClient/TopComponent";
 import Dropdown from "./components/Dropdown";
 import "./App.css";
 
@@ -17,6 +16,8 @@ function MainContent() {
   const location = useLocation();
   let page;
 
+  // This switch statement is used to determine the current page based on the URL pathname, 
+  // as to set the correct page name for the dropdown menu and the styling of the content.
   switch (location.pathname) {
     case "/":
       page = "Home";
@@ -27,8 +28,8 @@ function MainContent() {
     case "/Film-finder/index.html":
       page = "Film Finder";
       break;
-    case "/project3":
-      page = "Project 3";
+    case "/RedditClient":
+      page = "Reddit Client";
       break;
     default:
       page = "";
@@ -39,7 +40,7 @@ function MainContent() {
       <div className={`content ${isHovered ? "blurred" : ""}`}>
         <Dropdown
           className="dropdown"
-          items={["Home", "Inspirational Homepage" ]}
+          items={["Home", "Inspirational Homepage", "Reddit Client" ]}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
           page={page} 
@@ -48,8 +49,7 @@ function MainContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inspirationalhomepage" element={<Page1 />} />
-          <Route path="/project2" element={<Page2 />} />
-          <Route path="/project3/*" element={<StudentDashboard />} />
+          <Route path="/redditclient/*" element={<TopComponent />} />
         </Routes>
       </div>
     </div>
