@@ -52,4 +52,4 @@ export const deleteAccessToken = () => {
   console.log('Access Token Deleted');
 };
 
-// deleteAccessToken();
+deleteAccessToken();
