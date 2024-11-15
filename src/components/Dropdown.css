@@ -5,6 +5,9 @@
 }
 
 .dropdown-container {
+  position: absolute;
+  left: 0;
+  top: 0;
   z-index: 3;
   width: 0;
 }
@@ -30,7 +33,7 @@
   background: transparent;
 }
 
-.hamburger-icon.home {
+.hamburger-icon.home, .hamburger-icon.redditclient {
   color: black;
 }
 
@@ -38,9 +41,9 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-.hamburger-icon.project2 {
+/* .hamburger-icon.project2 {
   color: white;
-}
+} */
 
 /* .hamburger-icon.project3 {
   margin-left: 7px;
@@ -76,13 +79,13 @@
   font-weight: 800;
 }
 
-.dropdown.open .dropdown-menu.project2 {
+/* .dropdown.open .dropdown-menu.project2 {
   background-color: #2f556b;
 }
 
 .dropdown.open .dropdown-menu.project3 {
   background-color: white;
-}
+} */
 
 /************************ Dropdown-item **********************************/
 
@@ -115,17 +118,17 @@
   width: 100%;
 }
 
-.dropdown-item.home:hover {
+.dropdown-item.home:hover, .dropdown-item.redditclient:hover {
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: inset 20vw 0 0 0 black;
   color: white;
 }
 
-.dropdown.open .dropdown-item.home {
+.dropdown.open .dropdown-item.home, .dropdown.open .dropdown-item.redditclient {
   color: black;
 }
 
-.dropdown.open .dropdown-item.home:hover {
+.dropdown.open .dropdown-item.home:hover, .dropdown.open .dropdown-item.redditclient:hover {
   color: white;
 }
 
@@ -211,7 +214,7 @@
     justify-content: space-around;
   }
 
-  .dropdown-item.home:hover {
+  .dropdown-item.home:hover, .dropdown-item.redditclient:hover {
     box-shadow: inset 20vh 0 0 0 black;
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }

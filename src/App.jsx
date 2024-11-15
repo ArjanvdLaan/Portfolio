@@ -28,7 +28,7 @@ function MainContent() {
     case "/Film-finder/index.html":
       page = "Film Finder";
       break;
-    case "/RedditClient":
+    case "/redditclient":
       page = "Reddit Client";
       break;
     default:

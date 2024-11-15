@@ -194,7 +194,7 @@ const TopComponent = () => {
         path="/"
         element={
           isAuthenticated ? (
-            <div>
+            <div className="reddit-client-container">
               <SubredditSelector onSubredditChange={handleSubredditChange} />
               <HomePage
                 posts={posts}
