@@ -119,7 +119,7 @@ const MediaViewer = ({ post, mediaUrl, postUrl, galleryData }) => {
               />
             ) : galleryData ? (
               <div className="gallery-container">
-                <button onClick={goToPrevious} className="arrow">
+                <button onClick={goToPrevious} className="arrow-both">
                   <FontAwesomeIcon icon={faArrowLeft} class="arrow-left" />
                 </button>
                 <img
@@ -128,7 +128,7 @@ const MediaViewer = ({ post, mediaUrl, postUrl, galleryData }) => {
                   alt="Post Preview"
                   onClick={openViewer}
                 />
-                <button onClick={goToNext} className="arrow">
+                <button onClick={goToNext} className="arrow-both">
                   <FontAwesomeIcon icon={faArrowRight} class="arrow-right" />
                 </button>
               </div>

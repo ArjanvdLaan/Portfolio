@@ -12,7 +12,7 @@ const HomePage = ({ posts, setPosts, loadMoreRef, isLoading, accessToken }) => {
       <div className="space-div"></div>
 
       <div>
-        <ul>
+        <ul className="posts-container">
           {console.log("Homepage gets rendered!")}
           {posts.map((post) => {
             const mediaUrl = extractMediaUrl(post); // Get the media URL or fallback image

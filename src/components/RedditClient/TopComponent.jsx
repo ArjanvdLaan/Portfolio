@@ -6,7 +6,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import HomePage from "./components/HomePage";
-import LoginPage from "./components/LoginPage";
 import SubredditSelector from "./components/SubredditSelector";
 import { getRedditAuthUrl, getAccessToken } from "./auth";
 import axios from "axios";
@@ -26,42 +25,42 @@ const TopComponent = () => {
   const [after, setAfter] = useState(null); // State to keep track of the last post ID
   const [initialLoad, setInitialLoad] = useState(true);
   const [subreddit, setSubreddit] = useState("pics");
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
 
+  // Check if there is a code in the URL
   useEffect(() => {
-    // Check if the URL has a code parameter (this happens after returning from Reddit login)
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
+    console.log("First useEffect - code:", code, "accessToken:", accessToken);
 
-    // If there's no access token and we have an auth code, use it to get an access token
     if (!accessToken && code) {
-      console.log("Authorization Code Detected:", code);
+      setIsAuthenticating(true);
       setAuthCode(code);
-    } else if (!accessToken && !code) {
-      console.log("No access token or auth code found, redirecting to login");
-      window.location.href = getRedditAuthUrl(); // Trigger login flow if nothing is available
     }
   }, [accessToken]);
 
+  // Authenticate user with Reddit
   useEffect(() => {
+    console.log("Second useEffect - authCode:", authCode, "accessToken:", accessToken);
     if (authCode && !accessToken) {
       getAccessToken(authCode).then((token) => {
+        console.log("Token received from getAccessToken:", token);
         if (token) {
-          console.log("Access Token Retrieved:", token);
+          console.log("Setting access token:", token);
           setAccessToken(token);
-          setIsAuthenticated(true); // Mark as authenticated
-          localStorage.setItem("accessToken", token); // Save token to localStorage
-          // Clean the URL to remove auth code after successful exchange
-          window.history.replaceState(
-            {},
-            document.title,
-            window.location.pathname
-          );
+          setIsAuthenticated(true);
+          localStorage.setItem("accessToken", token);
+          window.location.replace("/redditclient");
         } else {
-          console.log("Failed to get access token. Redirecting to login...");
+          console.log("No token received, redirecting to login");
           setAuthCode(null);
           localStorage.removeItem("accessToken");
           window.location.href = getRedditAuthUrl();
         }
+        setIsAuthenticating(false);
+      })
+      .catch(error => {
+        console.error("Error in getAccessToken:", error);
       });
     }
   }, [authCode, accessToken]);
@@ -72,7 +71,11 @@ const TopComponent = () => {
     if (!accessToken) return; // Exit if accessToken is not available
 
     try {
-      setIsLoading(true); // Set loading state to true while fetching
+      console.log("initial load:", initialLoad);
+      // Only set loading to true if it's not the initial load
+      if (!initialLoad) {
+        setIsLoading(true);
+      }
 
       let validPosts = []; // Array to collect valid posts
       let currentAfter = after; // Initialize 'after' parameter with the last post ID
@@ -178,20 +181,27 @@ const TopComponent = () => {
 
   // Display login button if no auth code or access token is available
   if (!authCode && !accessToken) {
-    console.log(authCode, accessToken);
-    return (
-      <div>
-        <button onClick={() => (window.location.href = getRedditAuthUrl())}>
-          Login with Reddit
-        </button>
-      </div>
-    );
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get("code");
+    
+    if (!code) {
+      return (
+        <div>
+          <button onClick={() => (window.location.href = getRedditAuthUrl())}>
+            Login with Reddit
+          </button>
+        </div>
+      );
+    } else {
+      return <div>Authenticating...</div>;
+    }
   }
 
+  // If we're authenticated, show the main content
   return (
     <Routes>
       <Route
-        path="/"
+        path="/*"
         element={
           isAuthenticated ? (
             <div className="reddit-client-container">
@@ -205,18 +215,12 @@ const TopComponent = () => {
               />
             </div>
           ) : (
-            <Navigate to="/login" />
+            console.log("isAuthenticated:", isAuthenticated),
+            <Navigate to="login" />
           )
         }
       />
-      <Route
-        path="/login"
-        element={
-          <LoginPage
-            onClick={() => (window.location.href = getRedditAuthUrl())}
-          />
-        }
-      />
+
     </Routes>
   );
 };
