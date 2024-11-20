@@ -18,6 +18,7 @@
   left: 0;
   height: 100%;
   width: 100%;
+  /* border: 5px solid black; */
 }
 
 /************************ Hamburger-icon **********************************/
@@ -190,10 +191,16 @@
   transition-delay: 0s, 0.3s, 0s;
 }
 
-.content.blurred > *:not(.dropdown-container) {
-  filter: blur(5px);
+.content.blurred::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+  z-index: 2;
 }
-
 
 /************************* Media Queries *****************************/
 @media (max-width: 700px) {

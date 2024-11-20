@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Dropdown.css";
 
-function Dropdown({ items, isHovered, setIsHovered, page }) {
+function Dropdown({ items, isHovered, setIsHovered, page, isOpen, setIsOpen }) {
   console.log(page);
-  const [isOpen, setIsOpen] = useState(false);
+
   const dropdownRef = useRef(null);
 
   const handleClick = () => {

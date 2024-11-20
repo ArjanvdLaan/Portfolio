@@ -14,6 +14,7 @@ import "./App.css";
 function MainContent() {
   const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
   let page;
 
   // This switch statement is used to determine the current page based on the URL pathname, 
@@ -44,12 +45,14 @@ function MainContent() {
           isHovered={isHovered}
           setIsHovered={setIsHovered}
           page={page} 
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
         />
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inspirationalhomepage" element={<Page1 />} />
-          <Route path="/redditclient/*" element={<TopComponent />} />
+          <Route path="/redditclient/*" element={<TopComponent isOpen={isOpen} setIsOpen={setIsOpen} />} />
         </Routes>
       </div>
     </div>

@@ -6,11 +6,19 @@ import LoadingPlaceholder from "./LoadingPlaceholder";
 import { extractMediaUrl, calculateHoursSincePost } from "../utils";
 import "./CSS/HomePage.css";
 
-const HomePage = ({ posts, setPosts, loadMoreRef, isLoading, accessToken }) => {
+const HomePage = ({
+  posts,
+  setPosts,
+  loadMoreRef,
+  isLoading,
+  accessToken,
+  initialLoad,
+  isOpen,
+  setIsOpen,
+}) => {
   return (
     <div className="homepage-container">
       <div className="space-div"></div>
-
       <div>
         <ul className="posts-container">
           {console.log("Homepage gets rendered!")}
@@ -53,9 +61,9 @@ const HomePage = ({ posts, setPosts, loadMoreRef, isLoading, accessToken }) => {
           })}
         </ul>
         {/* This element is observed to trigger loading more posts */}
-        <div ref={loadMoreRef} style={{ height: "350px", width: "100px" }}>
+        <div ref={loadMoreRef} style={{ height: "350px", width: "10px" }}>
           {/* Show loading placeholders while fetching new posts */}
-          {isLoading && (
+          {isLoading && !initialLoad && (
             <>
               <LoadingPlaceholder />
             </>
@@ -63,7 +71,7 @@ const HomePage = ({ posts, setPosts, loadMoreRef, isLoading, accessToken }) => {
         </div>
       </div>
       <div className="title-container">
-        <Icons />
+        <Icons isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </div>
   );

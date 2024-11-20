@@ -10,7 +10,7 @@ import SubredditSelector from "./components/SubredditSelector";
 import { getRedditAuthUrl, getAccessToken } from "./auth";
 import axios from "axios";
 
-const TopComponent = () => {
+const TopComponent = ({ isOpen, setIsOpen }) => {
   const [authCode, setAuthCode] = useState(null);
   // Retrieve access token from localStorage or set to null if not found
   const [accessToken, setAccessToken] = useState(() => {
@@ -25,7 +25,6 @@ const TopComponent = () => {
   const [after, setAfter] = useState(null); // State to keep track of the last post ID
   const [initialLoad, setInitialLoad] = useState(true);
   const [subreddit, setSubreddit] = useState("pics");
-  const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   // Check if there is a code in the URL
   useEffect(() => {
@@ -34,7 +33,6 @@ const TopComponent = () => {
     console.log("First useEffect - code:", code, "accessToken:", accessToken);
 
     if (!accessToken && code) {
-      setIsAuthenticating(true);
       setAuthCode(code);
     }
   }, [accessToken]);
@@ -57,7 +55,6 @@ const TopComponent = () => {
           localStorage.removeItem("accessToken");
           window.location.href = getRedditAuthUrl();
         }
-        setIsAuthenticating(false);
       })
       .catch(error => {
         console.error("Error in getAccessToken:", error);
@@ -71,9 +68,8 @@ const TopComponent = () => {
     if (!accessToken) return; // Exit if accessToken is not available
 
     try {
-      console.log("initial load:", initialLoad);
-      // Only set loading to true if it's not the initial load
-      if (!initialLoad) {
+      // Only show loading placeholder if we already have posts
+      if (posts.length > 0) {
         setIsLoading(true);
       }
 
@@ -197,7 +193,7 @@ const TopComponent = () => {
     }
   }
 
-  // If we're authenticated, show the main content
+  // If authenticated, show the main content
   return (
     <Routes>
       <Route
@@ -212,6 +208,9 @@ const TopComponent = () => {
                 setPosts={setPosts}
                 loadMoreRef={loadMoreRef}
                 isLoading={isLoading}
+                initialLoad={initialLoad}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
               />
             </div>
           ) : (

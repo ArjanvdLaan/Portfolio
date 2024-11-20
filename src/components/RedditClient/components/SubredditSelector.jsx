@@ -21,6 +21,7 @@ const SubredditSelector = ({ onSubredditChange }) => {
 
   // Handle change event when the user selects a new subreddit
   const subredditSelectionHandler = (event) => {
+
     const subreddit = event.target.value;
     console.log("different subreddit is selected", subreddit);
     setSelectedSubreddit(subreddit);

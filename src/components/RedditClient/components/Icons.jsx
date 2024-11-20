@@ -4,13 +4,14 @@ import CodecademyLogo from "../Images/codecademy-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReddit } from "@fortawesome/free-brands-svg-icons";
 
-const Icons = () => {
+const Icons = ({ isOpen, setIsOpen }) => {
   return (
-    <div className="icons">
+    <div className={`icons ${isOpen ? 'icons-open' : ''}`}>
       <a
         href="https://www.codecademy.com"
         target="_blank"
         rel="noopener noreferrer"
+        className="Codecademy-logo-container"
       >
         <img
           className="Codecademy-logo"
