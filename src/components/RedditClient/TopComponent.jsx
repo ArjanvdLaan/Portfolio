@@ -6,11 +6,12 @@ import {
   Navigate,
 } from "react-router-dom";
 import HomePage from "./components/HomePage";
+import LoginPage from "./components/LoginPage";
 import SubredditSelector from "./components/SubredditSelector";
 import { getRedditAuthUrl, getAccessToken } from "./auth";
 import axios from "axios";
 
-const TopComponent = ({ isOpen, setIsOpen }) => {
+const TopComponent = () => {
   const [authCode, setAuthCode] = useState(null);
   // Retrieve access token from localStorage or set to null if not found
   const [accessToken, setAccessToken] = useState(() => {
@@ -18,7 +19,6 @@ const TopComponent = ({ isOpen, setIsOpen }) => {
     return storedToken ? storedToken : null;
   });
   const [posts, setPosts] = useState([]);
-  const [isAuthenticated, setIsAuthenticated] = useState(!!accessToken); // Track authentication state
   const [page, setPage] = useState(1); // State to keep track of which page (batch) of posts we are on
   const [isLoading, setIsLoading] = useState(false); // State to track if the next set of posts is being loaded
   const loadMoreRef = useRef(null); // Ref for the "Load More" element
@@ -39,26 +39,31 @@ const TopComponent = ({ isOpen, setIsOpen }) => {
 
   // Authenticate user with Reddit
   useEffect(() => {
-    console.log("Second useEffect - authCode:", authCode, "accessToken:", accessToken);
+    console.log(
+      "Second useEffect - authCode:",
+      authCode,
+      "accessToken:",
+      accessToken
+    );
     if (authCode && !accessToken) {
-      getAccessToken(authCode).then((token) => {
-        console.log("Token received from getAccessToken:", token);
-        if (token) {
-          console.log("Setting access token:", token);
-          setAccessToken(token);
-          setIsAuthenticated(true);
-          localStorage.setItem("accessToken", token);
-          window.location.replace("/redditclient");
-        } else {
-          console.log("No token received, redirecting to login");
-          setAuthCode(null);
-          localStorage.removeItem("accessToken");
-          window.location.href = getRedditAuthUrl();
-        }
-      })
-      .catch(error => {
-        console.error("Error in getAccessToken:", error);
-      });
+      getAccessToken(authCode)
+        .then((token) => {
+          console.log("Token received from getAccessToken:", token);
+          if (token) {
+            console.log("Setting access token:", token);
+            setAccessToken(token);
+            localStorage.setItem("accessToken", token);
+            window.location.replace("/redditclient");
+          } else {
+            console.log("No token received, redirecting to login");
+            setAuthCode(null);
+            localStorage.removeItem("accessToken");
+            window.location.href = getRedditAuthUrl();
+          }
+        })
+        .catch((error) => {
+          console.error("Error in getAccessToken:", error);
+        });
     }
   }, [authCode, accessToken]);
 
@@ -179,14 +184,12 @@ const TopComponent = ({ isOpen, setIsOpen }) => {
   if (!authCode && !accessToken) {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
-    
+
     if (!code) {
       return (
-        <div>
-          <button onClick={() => (window.location.href = getRedditAuthUrl())}>
-            Login with Reddit
-          </button>
-        </div>
+        <>
+          <LoginPage />
+        </>
       );
     } else {
       return <div>Authenticating...</div>;
@@ -199,27 +202,19 @@ const TopComponent = ({ isOpen, setIsOpen }) => {
       <Route
         path="/*"
         element={
-          isAuthenticated ? (
-            <div className="reddit-client-container">
-              <SubredditSelector onSubredditChange={handleSubredditChange} />
-              <HomePage
-                posts={posts}
-                accessToken={accessToken}
-                setPosts={setPosts}
-                loadMoreRef={loadMoreRef}
-                isLoading={isLoading}
-                initialLoad={initialLoad}
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-              />
-            </div>
-          ) : (
-            console.log("isAuthenticated:", isAuthenticated),
-            <Navigate to="login" />
-          )
+          <div className="reddit-client-container">
+            <SubredditSelector onSubredditChange={handleSubredditChange} />
+            <HomePage
+              posts={posts}
+              accessToken={accessToken}
+              setPosts={setPosts}
+              loadMoreRef={loadMoreRef}
+              isLoading={isLoading}
+              initialLoad={initialLoad}
+            />
+          </div>
         }
       />
-
     </Routes>
   );
 };

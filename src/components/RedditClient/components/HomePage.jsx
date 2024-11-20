@@ -12,9 +12,7 @@ const HomePage = ({
   loadMoreRef,
   isLoading,
   accessToken,
-  initialLoad,
-  isOpen,
-  setIsOpen,
+  initialLoad
 }) => {
   return (
     <div className="homepage-container">
@@ -71,7 +69,7 @@ const HomePage = ({
         </div>
       </div>
       <div className="title-container">
-        <Icons isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Icons/>
       </div>
     </div>
   );

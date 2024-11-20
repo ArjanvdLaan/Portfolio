@@ -17,7 +17,7 @@ function MainContent() {
   const [isOpen, setIsOpen] = useState(false);
   let page;
 
-  // This switch statement is used to determine the current page based on the URL pathname, 
+  // This switch statement is used to determine the current page based on the URL pathname,
   // as to set the correct page name for the dropdown menu and the styling of the content.
   switch (location.pathname) {
     case "/":
@@ -41,10 +41,10 @@ function MainContent() {
       <div className={`content ${isHovered ? "blurred" : ""}`}>
         <Dropdown
           className="dropdown"
-          items={["Home", "Inspirational Homepage", "Reddit Client" ]}
+          items={["Home", "Inspirational Homepage", "Reddit Client"]}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
-          page={page} 
+          page={page}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
@@ -52,7 +52,10 @@ function MainContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inspirationalhomepage" element={<Page1 />} />
-          <Route path="/redditclient/*" element={<TopComponent isOpen={isOpen} setIsOpen={setIsOpen} />} />
+          <Route
+            path="/redditclient/*"
+            element={<TopComponent isOpen={isOpen} setIsOpen={setIsOpen} />}
+          />
         </Routes>
       </div>
     </div>
