@@ -12,7 +12,7 @@ const HomePage = ({
   loadMoreRef,
   isLoading,
   accessToken,
-  initialLoad
+  initialLoad,
 }) => {
   return (
     <div className="homepage-container">
@@ -59,17 +59,14 @@ const HomePage = ({
           })}
         </ul>
         {/* This element is observed to trigger loading more posts */}
-        <div ref={loadMoreRef} style={{ height: "350px", width: "10px" }}>
+        <div ref={loadMoreRef} style={{ height: "350px" }}>
           {/* Show loading placeholders while fetching new posts */}
-          {isLoading && !initialLoad && (
-            <>
-              <LoadingPlaceholder />
-            </>
-          )}
+          {isLoading && !initialLoad && 
+          <LoadingPlaceholder />}
         </div>
       </div>
       <div className="title-container">
-        <Icons/>
+        <Icons />
       </div>
     </div>
   );

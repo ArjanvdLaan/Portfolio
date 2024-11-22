@@ -11,6 +11,7 @@
 .homepage-container {
   position: relative; /* Ensure the container is positioned relative to its parent */
   /* min-height: 100vh; Ensure the container takes the full viewport height */
+
 }
 
 .title-container {
@@ -27,6 +28,7 @@
   justify-content: center;
   margin-right: 10px;
 }
+
 
 .posts-container {
   display: flex;

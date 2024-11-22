@@ -3,7 +3,7 @@ import "./CSS/LoadingPlaceholder.css";
 
 const LoadingPlaceholder = () => {
   return (
-    <div className="container">
+    <div className="container-placeholder">
       <div className="loading-placeholder">
         <div className="placeholder-title"></div>
         <div className="placeholder-image"></div>
