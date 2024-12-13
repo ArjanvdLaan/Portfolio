@@ -1,0 +1,47 @@
+.disclosure-container {
+    max-width: 590px;
+    margin: 0 auto;
+  }
+  
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .title {
+    font-size: 20px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .disclosure-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 1em;
+    background-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+  }
+  
+  .disclosure-panel {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: white;
+    z-index: 2;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+  }
+  
+  .arrow-button {
+    color: black;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }

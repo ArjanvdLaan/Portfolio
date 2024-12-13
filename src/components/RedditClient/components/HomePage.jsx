@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "./Title";
 import Icons from "./Icons";
 import Vote from "./Vote";
 import MediaViewer from "./MediaViewer";
@@ -34,9 +35,9 @@ const HomePage = ({
             return (
               <React.Fragment key={post.data.id}>
                 <div className="post">
-                  <li className="title" key={post.data.id}>
-                    {post.data.title}
-                  </li>
+                  <div className="title-container">
+                    <Title post={post} />
+                  </div>
                   <div className="vote-container">
                     <Vote post={post} accessToken={accessToken} />
                   </div>
@@ -61,8 +62,7 @@ const HomePage = ({
         {/* This element is observed to trigger loading more posts */}
         <div ref={loadMoreRef} style={{ height: "350px" }}>
           {/* Show loading placeholders while fetching new posts */}
-          {isLoading && !initialLoad && 
-          <LoadingPlaceholder />}
+          {isLoading && !initialLoad && <LoadingPlaceholder />}
         </div>
       </div>
       <div className="title-container">

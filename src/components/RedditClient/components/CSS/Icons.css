@@ -18,7 +18,7 @@
   height: 40px;
   margin-right: 5px;
   border-radius: 5px;
-  z-index: 999;
+  z-index: 4;
 }
 
 .Codecademy-logo-container {
@@ -35,7 +35,7 @@
   height: 50px;
   border-radius: 5% 0 0 5%;
   margin-right: 5px;
-  z-index: 999;
+  z-index: 4;
 }
 
 @media only screen and (max-width: 768px) and (orientation: landscape) {

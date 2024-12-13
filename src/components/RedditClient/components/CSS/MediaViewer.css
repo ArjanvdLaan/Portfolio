@@ -145,7 +145,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 5;
   backdrop-filter: blur(
     7px
   ); /* Apply blur to the background behind the overlay */
@@ -165,7 +165,7 @@
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  z-index: 2;
+  z-index: 5;
 }
 
 .media-viewer-content > video {
