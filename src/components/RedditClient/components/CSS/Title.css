@@ -6,7 +6,8 @@
   .title-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
   }
   
   .title {
@@ -29,8 +30,12 @@
   }
   
   .disclosure-panel {
-    margin-top: 10px;
-    font-size: 14px;
+    width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    font-size: 1em;
     color: #333;
     background-color: white;
     z-index: 2;
