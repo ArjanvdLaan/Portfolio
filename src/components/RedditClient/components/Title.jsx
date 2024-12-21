@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Disclosure } from "@headlessui/react";
 import "./CSS/Title.css";
 
@@ -19,6 +19,13 @@ const Title = ({ post }) => {
     displayedTitle = titleText.substring(0, endIndex);
     remainingTitle = titleText.substring(endIndex).trim(); // Remaining part of the title
   }
+
+  useEffect(() => {
+    if (titleText.length > truncatedLength) {
+      // Set the style of the cursor of the dislosure button to be pointer
+      titleRef.current.style.cursor = "pointer";
+    }
+  });
 
   return (
     <div className="disclosure-container">
